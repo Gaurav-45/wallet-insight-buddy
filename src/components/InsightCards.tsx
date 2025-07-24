@@ -9,48 +9,44 @@ export const InsightCards = () => {
       title: "Weekly Spending Up 15%",
       description: "You spent $127 more this week compared to last week",
       category: "Trending",
-      color: "text-google-blue",
-      bgColor: "bg-google-blue/10",
-      action: "View Details",
-      ctaVariant: "google-blue" as const
+      color: "text-info",
+      bgColor: "bg-info/10",
+      action: "View Details"
     },
     {
       icon: ShoppingCart,
       title: "Top Category: Groceries",
       description: "72% of your spending this month went to grocery stores",
       category: "Category",
-      color: "text-google-green",
-      bgColor: "bg-google-green/10", 
-      action: "Create Grocery Pass",
-      ctaVariant: "google-green" as const
+      color: "text-accent",
+      bgColor: "bg-accent/10", 
+      action: "Create Grocery Pass"
     },
     {
       icon: Calendar,
       title: "Monthly Budget Alert",
       description: "You've used 85% of your $500 monthly grocery budget",
       category: "Budget",
-      color: "text-google-yellow",
-      bgColor: "bg-google-yellow/10",
-      action: "Adjust Budget",
-      ctaVariant: "google-yellow" as const
+      color: "text-warning",
+      bgColor: "bg-warning/10",
+      action: "Adjust Budget"
     },
     {
       icon: AlertCircle,
       title: "Subscription Detected",
       description: "Netflix charge detected - would you like to track subscriptions?",
       category: "Alert",
-      color: "text-google-red",
-      bgColor: "bg-google-red/10",
-      action: "Track Subscriptions",
-      ctaVariant: "google-red" as const
+      color: "text-destructive",
+      bgColor: "bg-destructive/10",
+      action: "Track Subscriptions"
     }
   ];
 
   return (
-    <div className="space-y-6 max-w-2xl mx-auto">
+    <div className="space-y-4 max-w-2xl mx-auto">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-foreground">AI Insights</h2>
-        <Button variant="ghost" size="sm" className="text-google-blue hover:bg-google-blue/10">View All</Button>
+        <h2 className="text-xl font-semibold text-foreground">AI Insights</h2>
+        <Button variant="ghost" size="sm">View All</Button>
       </div>
 
       <div className="grid gap-4">
@@ -59,30 +55,30 @@ export const InsightCards = () => {
           return (
             <Card 
               key={index}
-              className="p-6 animate-fade-in glass-card border-0 shadow-google hover:shadow-floating transition-all duration-300 group cursor-pointer"
+              className="p-4 animate-fade-in bg-card border-0 shadow-card hover:shadow-elevated transition-shadow"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-start gap-4">
-                <div className={`p-3 rounded-xl ${insight.bgColor} group-hover:scale-110 transition-transform`}>
-                  <IconComponent className={`h-6 w-6 ${insight.color}`} />
+                <div className={`p-2 rounded-full ${insight.bgColor}`}>
+                  <IconComponent className={`h-5 w-5 ${insight.color}`} />
                 </div>
                 
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="font-semibold text-card-foreground truncate text-lg">{insight.title}</h3>
-                    <span className="text-xs px-3 py-1 bg-muted/80 rounded-full text-muted-foreground font-medium">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="font-medium text-card-foreground truncate">{insight.title}</h3>
+                    <span className="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">
                       {insight.category}
                     </span>
                   </div>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
                     {insight.description}
                   </p>
                   
-                  <div className="flex gap-3">
-                    <Button size="sm" variant="outline" className="text-xs font-medium">
+                  <div className="flex gap-2">
+                    <Button size="sm" variant="outline" className="text-xs">
                       {insight.action}
                     </Button>
-                    <Button size="sm" className="text-xs font-medium bg-gradient-primary border-0 hover:shadow-elevated transition-shadow">
+                    <Button size="sm" className="text-xs bg-gradient-primary border-0">
                       <Wallet className="h-3 w-3 mr-1" />
                       Add to Wallet
                     </Button>
