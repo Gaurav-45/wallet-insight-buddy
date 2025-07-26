@@ -108,58 +108,42 @@ export const ReceiptUpload = () => {
   }
 
   return (
-    <Card className="p-8 max-w-md mx-auto bg-gradient-surface border-0 shadow-floating backdrop-blur-sm">
-      <div className="text-center mb-8">
-        <div className="relative inline-block mb-4">
-          <div className="p-4 bg-gradient-primary rounded-2xl shadow-elevated">
-            <FileText className="h-8 w-8 text-primary-foreground" />
-          </div>
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-accent rounded-full border-2 border-background flex items-center justify-center">
-            <span className="text-xs text-accent-foreground font-bold">AI</span>
-          </div>
-        </div>
-        <h3 className="text-xl font-bold mb-3 text-card-foreground">Smart Receipt Upload</h3>
-        <p className="text-muted-foreground leading-relaxed">
-          Professional AI-powered analysis for accurate data extraction and Google Wallet integration
+    <Card className="p-6 max-w-md mx-auto bg-card border-0 shadow-card">
+      <div className="text-center mb-6">
+        <FileText className="h-12 w-12 text-primary mx-auto mb-3" />
+        <h3 className="text-lg font-semibold mb-2 text-card-foreground">Upload Receipt</h3>
+        <p className="text-muted-foreground text-sm">
+          Capture or upload your receipt for AI analysis
         </p>
       </div>
 
       {uploading ? (
-        <div className="space-y-6">
+        <div className="space-y-4">
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center animate-glow">
-              <FileText className="h-8 w-8 text-primary-foreground animate-bounce" />
-            </div>
-            <p className="text-lg font-medium text-card-foreground mb-2">Processing Receipt</p>
-            <p className="text-sm text-muted-foreground mb-4">AI analysis in progress...</p>
-            <Progress value={progress} className="w-full h-2" />
-            <p className="text-xs text-muted-foreground mt-2">{progress}% completed</p>
+            <p className="text-sm text-muted-foreground mb-2">Analyzing receipt...</p>
+            <Progress value={progress} className="w-full" />
           </div>
         </div>
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-3">
           <Button 
             onClick={() => handleUpload('camera')} 
-            className="w-full bg-gradient-primary hover:opacity-90 border-0 shadow-elevated hover:shadow-floating transition-all duration-300 py-4"
+            className="w-full bg-gradient-primary border-0"
             size="lg"
           >
-            <Camera className="h-5 w-5 mr-3" />
-            Capture with Camera
+            <Camera className="h-5 w-5 mr-2" />
+            Take Photo
           </Button>
           
           <Button 
             onClick={() => handleUpload('file')} 
             variant="outline" 
-            className="w-full border-2 border-primary/20 hover:bg-primary/5 hover:border-primary/30 transition-all duration-300 py-4"
+            className="w-full"
             size="lg"
           >
-            <Upload className="h-5 w-5 mr-3" />
+            <Upload className="h-5 w-5 mr-2" />
             Upload from Gallery
           </Button>
-          
-          <p className="text-center text-xs text-muted-foreground mt-6">
-            Supports JPG, PNG, PDF • Max 10MB • Secure processing
-          </p>
         </div>
       )}
     </Card>
