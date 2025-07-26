@@ -9,41 +9,49 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 248 250 252 / 1;
-    --foreground: 15 23 42 / 1;
+    --foreground: 32 33 36 / 1;
 
     --card: 255 255 255 / 1;
-    --card-foreground: 15 23 42 / 1;
+    --card-foreground: 32 33 36 / 1;
 
     --popover: 255 255 255 / 1;
-    --popover-foreground: 15 23 42 / 1;
+    --popover-foreground: 32 33 36 / 1;
 
-    --primary: 59 130 246 / 1;
-    --primary-foreground: 248 250 252 / 1;
+    /* Google Blue #4285F4 */
+    --primary: 217 89% 61% / 1;
+    --primary-foreground: 255 255 255 / 1;
 
-    --secondary: 241 245 249 / 1;
-    --secondary-foreground: 51 65 85 / 1;
+    --secondary: 244 244 246 / 1;
+    --secondary-foreground: 32 33 36 / 1;
 
     --muted: 248 250 252 / 1;
-    --muted-foreground: 100 116 139 / 1;
+    --muted-foreground: 95 99 104 / 1;
 
-    --accent: 34 197 94 / 1;
+    /* Google Green #34A853 */
+    --accent: 137 67% 43% / 1;
     --accent-foreground: 255 255 255 / 1;
 
-    --destructive: 239 68 68 / 1;
-    --destructive-foreground: 248 250 252 / 1;
+    /* Google Red #EA4335 */
+    --destructive: 4 82% 56% / 1;
+    --destructive-foreground: 255 255 255 / 1;
 
-    --border: 226 232 240 / 1;
-    --input: 226 232 240 / 1;
-    --ring: 59 130 246 / 1;
+    --border: 229 231 235 / 1;
+    --input: 229 231 235 / 1;
+    --ring: 217 89% 61% / 1;
 
-    --success: 34 197 94 / 1;
-    --warning: 251 191 36 / 1;
-    --info: 14 165 233 / 1;
+    /* Google Colors */
+    --success: 137 67% 43% / 1; /* Google Green */
+    --warning: 45 97% 50% / 1;  /* Google Yellow #FBBC05 */
+    --info: 217 89% 61% / 1;    /* Google Blue */
+    --google-red: 4 82% 56% / 1; /* Google Red #EA4335 */
     
-    --gradient-primary: linear-gradient(135deg, rgb(59 130 246), rgb(147 197 253));
-    --gradient-accent: linear-gradient(135deg, rgb(34 197 94), rgb(74 222 128));
+    /* Google-inspired gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 89% 61%), hsl(217 89% 71%));
+    --gradient-accent: linear-gradient(135deg, hsl(137 67% 43%), hsl(137 67% 53%));
+    --gradient-google: linear-gradient(135deg, hsl(217 89% 61%), hsl(137 67% 43%), hsl(45 97% 50%), hsl(4 82% 56%));
     --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --shadow-elevated: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-google: 0 8px 16px 0 hsl(217 89% 61% / 0.2);
 
     --radius: 0.5rem;
 
@@ -65,33 +73,42 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 32 33 36 / 1;
+    --foreground: 248 249 250 / 1;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 41 42 45 / 1;
+    --card-foreground: 248 249 250 / 1;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 41 42 45 / 1;
+    --popover-foreground: 248 249 250 / 1;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Google Blue in dark mode */
+    --primary: 217 89% 71% / 1;
+    --primary-foreground: 32 33 36 / 1;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 60 62 68 / 1;
+    --secondary-foreground: 248 249 250 / 1;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 60 62 68 / 1;
+    --muted-foreground: 154 160 166 / 1;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Google Green in dark mode */
+    --accent: 137 67% 53% / 1;
+    --accent-foreground: 32 33 36 / 1;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Google Red in dark mode */
+    --destructive: 4 82% 66% / 1;
+    --destructive-foreground: 32 33 36 / 1;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 60 62 68 / 1;
+    --input: 60 62 68 / 1;
+    --ring: 217 89% 71% / 1;
+
+    /* Google Colors - Dark Mode */
+    --success: 137 67% 53% / 1; /* Google Green */
+    --warning: 45 97% 60% / 1;  /* Google Yellow */
+    --info: 217 89% 71% / 1;    /* Google Blue */
+    --google-red: 4 82% 66% / 1; /* Google Red */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
