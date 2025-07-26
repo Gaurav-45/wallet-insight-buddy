@@ -43,43 +43,46 @@ export const InsightCards = () => {
   ];
 
   return (
-    <div className="space-y-4 max-w-2xl mx-auto">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-semibold text-foreground">AI Insights</h2>
-        <Button variant="ghost" size="sm">View All</Button>
+    <div className="space-y-6 max-w-2xl mx-auto">
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <h2 className="text-2xl font-bold text-foreground mb-1">AI Insights</h2>
+          <p className="text-sm text-muted-foreground">Personalized recommendations powered by Google AI</p>
+        </div>
+        <Button variant="ghost" size="sm" className="hover:bg-primary/10 hover:text-primary">View All</Button>
       </div>
 
-      <div className="grid gap-4">
+      <div className="grid gap-6">
         {insights.map((insight, index) => {
           const IconComponent = insight.icon;
           return (
             <Card 
               key={index}
-              className="p-4 animate-fade-in bg-card border-0 shadow-card hover:shadow-elevated transition-shadow"
+              className="p-6 animate-fade-in bg-gradient-surface border-0 shadow-floating hover:shadow-elevated transition-all duration-300 group backdrop-blur-sm"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-start gap-4">
-                <div className={`p-2 rounded-full ${insight.bgColor}`}>
-                  <IconComponent className={`h-5 w-5 ${insight.color}`} />
+              <div className="flex items-start gap-5">
+                <div className={`p-3 rounded-xl ${insight.bgColor} group-hover:scale-110 transition-transform duration-300 shadow-card`}>
+                  <IconComponent className={`h-6 w-6 ${insight.color}`} />
                 </div>
                 
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-medium text-card-foreground truncate">{insight.title}</h3>
-                    <span className="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="font-semibold text-lg text-card-foreground truncate">{insight.title}</h3>
+                    <span className="text-xs px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary font-medium">
                       {insight.category}
                     </span>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
                     {insight.description}
                   </p>
                   
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="outline" className="text-xs">
+                  <div className="flex gap-3">
+                    <Button size="sm" variant="outline" className="border-primary/20 hover:bg-primary/5 hover:border-primary/30 transition-colors">
                       {insight.action}
                     </Button>
-                    <Button size="sm" className="text-xs bg-gradient-primary border-0">
-                      <Wallet className="h-3 w-3 mr-1" />
+                    <Button size="sm" className="bg-gradient-primary hover:opacity-90 border-0 shadow-card hover:shadow-elevated transition-all duration-300">
+                      <Wallet className="h-4 w-4 mr-2" />
                       Add to Wallet
                     </Button>
                   </div>
